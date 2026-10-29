@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-primary: #4f46e5; --color-primary-soft: #eef0ff;
+  --color-tertiary: #059669; --color-tertiary-soft: #d9f7ea;
+  --color-error: #dc2626; --color-error-soft: #fee4e2;
+  --color-warn: #b45309; --color-warn-soft: #fef0c7;
+  --color-bg: #f6f7fb; --color-low: #f3f4fa; --color-line: #e8eaf2;
+  --color-ink: #101828; --color-mute: #667085;
+}
+body {
+  color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased;
+  background: radial-gradient(900px 420px at 100% -10%, #e6e5ff 0%, transparent 60%),
+              radial-gradient(700px 380px at -10% 0%, #dff1ff 0%, transparent 55%), var(--color-bg);
+  background-attachment: fixed;
+}
+.card { background: #fff; border: 1px solid var(--color-line); border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 14px 30px -18px rgba(16,24,40,.16); animation: rise .45s ease-out both; }
+.material-symbols-outlined { font-family: "Material Symbols Outlined"; font-size: 20px; line-height: 1; vertical-align: middle; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.bar-grow { transform-origin: left; animation: grow .8s cubic-bezier(.2,.8,.2,1) both; }
